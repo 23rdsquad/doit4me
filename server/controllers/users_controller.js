@@ -1,8 +1,8 @@
-const Users = require('../models').items;
+const Users = require('../models').users;
 const models = require ('../models');
 
 module.exports = {
-  createItem: (req, res, next) => {
+  createUser: (req, res, next) => {
     console.log(req.body)
     // res.status(200).json({ status: 'Created one user' })
     const { name } = req.body;
@@ -12,14 +12,14 @@ module.exports = {
     .catch(error => console.log(error));
   },
 
-  getAllItems: (req, res, next) => {
+  getAllUsers: (req, res, next) => {
     return Users
     .findAll({paranoid: false})
     .then(users => res.status(200).json({ status: 'Retrieved all users', users }))
     .catch(error => console.log(error));
   },
 
-  getSingleItem: (req, res, next) => {
+  getSingleUser: (req, res, next) => {
     const { id } = req.params;
     return Users
     .findById(id)
@@ -27,7 +27,7 @@ module.exports = {
     .catch(error => console.log(error));
   },
 
-  updateItem: (req, res, next) => {
+  updateUser: (req, res, next) => {
     const { id } = req.params;
     const { name } = req.body;
     return Users
@@ -46,7 +46,7 @@ module.exports = {
     .catch(error => console.log(error));
   },
 
-  destroyItem: (req, res, next) => {
+  destroyUser: (req, res, next) => {
     const { id } = req.params;
     return Users
     .findById(id)
