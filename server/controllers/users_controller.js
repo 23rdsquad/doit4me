@@ -15,7 +15,7 @@ module.exports = {
   getAllItems: (req, res, next) => {
     return Users
     .findAll({paranoid: false})
-    .then(items => res.status(200).json({ status: 'Retrieved all items', items }))
+    .then(users => res.status(200).json({ status: 'Retrieved all users', users }))
     .catch(error => console.log(error));
   },
 
