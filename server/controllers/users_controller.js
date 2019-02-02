@@ -1,4 +1,6 @@
-const User = require('../models').user;
+
+const db = require('../models')
+const { User } = db
 
 module.exports = {
   check: (req, res, next) => {
@@ -6,8 +8,7 @@ module.exports = {
   },
 
   createUser: (req, res, next) => {
-    console.log('req.body', req.body)
-    // res.status(200).json({ status: 'Created one user' })
+    // console.log('req.body', req.body)
     const { name } = req.body;
     return User
     .create({ name })

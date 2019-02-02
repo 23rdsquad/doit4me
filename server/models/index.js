@@ -25,11 +25,17 @@ fs
     db[model.name] = model;
   });
 
+  /*
 Object.keys(db).forEach(modelName => {
+  console.log(modelName)
   if (db[modelName].associate) {
+    console.log('association happened')
     db[modelName].associate(db);
+  } else {
+    console.log('association did not happen')
   }
 });
+*/
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
