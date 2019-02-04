@@ -3,10 +3,6 @@ const db = require('../models')
 const { User } = db
 
 module.exports = {
-  check: (req, res, next) => {
-    res.status(200).json({ status: 'lol'})
-  },
-
   createUser: (req, res, next) => {
     // console.log('req.body', req.body)
     const { name } = req.body;

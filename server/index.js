@@ -8,8 +8,6 @@ app.use(bodyParser.json());
 
 const users_controller = require('./controllers/users_controller');
 
-app.get('/check', users_controller.check);
-
 app.post('/user/create', users_controller.createUser);
 app.get('/users', users_controller.getAllUsers);
 app.get('/user/get/:id', users_controller.getSingleUser);
