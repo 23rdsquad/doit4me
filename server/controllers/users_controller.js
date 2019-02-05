@@ -5,9 +5,9 @@ const { User } = db
 module.exports = {
   createUser: (req, res, next) => {
     // console.log('req.body', req.body)
-    const { name } = req.body;
+    const { nickname, password, email, ip, location, personal, rating, photo } = req.body;
     return User
-    .create({ name })
+    .create({ nickname, password, email, ip, location, personal, rating, photo })
     .then(user => res.status(200).json({ status: 'Created one user', user }))
     .catch(error => console.log(error));
   },
@@ -29,7 +29,7 @@ module.exports = {
 
   updateUser: (req, res, next) => {
     const { id } = req.params;
-    const { name } = req.body;
+    const { nickname, password, email, ip, location, personal, rating, photo } = req.body;
     return User
     .findById(id)
     .then(user => {
@@ -38,7 +38,14 @@ module.exports = {
       }
       return user
       .update({
-        name: name
+        nickname: nickname,
+        password: password,
+        email: email,
+        ip: ip,
+        location: location,
+        personal: personal,
+        rating: rating,
+        photo: photo
       })
       .then(user => res.status(200).json({ status: 'Updated one user', user }))
       .catch(error => console.log(error));
@@ -59,5 +66,6 @@ module.exports = {
       .then(() => res.status(200).json({ status: 'Deleted one user', user }))
       .catch(error => console.log(error));
     })
+    .catch(error => console.log(error));
   },
 };
