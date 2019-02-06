@@ -8,7 +8,10 @@ module.exports = (sequelize, DataTypes) => {
     location: DataTypes.INTEGER,
     deadline: DataTypes.DATE,
     status: DataTypes.STRING,
-    contractor: DataTypes.INTEGER // for now string, later will be base64
+    contractor: DataTypes.INTEGER, // for now string, later will be base64
+    photos: DataTypes.STRING,
+    category: DataTypes.STRING,
+    requests: DataTypes.STRING
   }, {
     timestamps: true,
     paranoid: true
