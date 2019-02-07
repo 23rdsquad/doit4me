@@ -11,7 +11,13 @@ module.exports = {
       title: {
         type: Sequelize.STRING
       },
-      creator: {
+      category: {
+        type: Sequelize.STRING
+      },
+      creator_id: {
+        type: Sequelize.INTEGER
+      },
+      contractor_id: {
         type: Sequelize.INTEGER
       },
       price: {
@@ -29,13 +35,7 @@ module.exports = {
       status: {
         type: Sequelize.STRING
       },
-      contractor: {
-        type: Sequelize.INTEGER
-      },
       photos: {
-        type: Sequelize.STRING
-      },
-      category: {
         type: Sequelize.STRING
       },
       requests: {

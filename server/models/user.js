@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     ip: DataTypes.STRING, // has to be array
     location: DataTypes.INTEGER,
     personal: DataTypes.STRING,
-    rating: DataTypes.INTEGER,
+    rating: DataTypes.FLOAT,
     photo: DataTypes.STRING // for now string, later will be base64
   }, {
     timestamps: true,

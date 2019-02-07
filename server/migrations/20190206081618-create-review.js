@@ -8,8 +8,23 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
-        type: Sequelize.STRING
+      job_id: {
+        type: Sequelize.INTEGER
+      },
+      creator_id: {
+        type: Sequelize.INTEGER
+      },
+      contractor_id: {
+        type: Sequelize.INTEGER
+      },
+      rate: {
+        type: Sequelize.INTEGER
+      },
+      description: {
+        type: Sequelize.INTEGER
+      },
+      deletedAt: {
+        type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,
