@@ -1,6 +1,6 @@
 
-const db = require('../models')
-const { Task } = db
+const db = require('../models');
+const { Task } = db;
 
 module.exports = {
   createTask: (req, res, next) => {

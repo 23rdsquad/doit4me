@@ -10,6 +10,10 @@ const users_controller = require('./controllers/users_controller');
 const tasks_controller = require('./controllers/tasks_controller');
 const reviews_controller = require('./controllers/reviews_controller');
 
+app.post('/register', users_controller.register);
+app.post('/login', users_controller.login);
+app.post('/logout', users_controller.logout);
+
 app.post('/user/create', users_controller.createUser);
 app.get('/users', users_controller.getAllUsers);
 app.get('/user/get/:id', users_controller.getSingleUser);

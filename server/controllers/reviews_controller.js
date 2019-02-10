@@ -1,6 +1,6 @@
 
-const db = require('../models')
-const { Review } = db
+const db = require('../models');
+const { Review } = db;
 
 module.exports = {
   createReview: (req, res, next) => {

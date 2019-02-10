@@ -1,10 +1,34 @@
 
-const db = require('../models')
-const { User } = db
+const db = require('../models');
+const bcrypt = require ('bcrypt');
+const saltRound = 12;
+const { User } = db;
 
 module.exports = {
+  register: (req, res, next) => {
+    let { nickname, password, email, ip, location, personal, rating, photo } = req.body;
+    bcrypt.hash(password, saltRound)
+    .then(hashedPassword => {
+      password = hashedPassword;
+      return User
+      .create({ nickname, password, email, ip, location, personal, rating, photo })
+      .then(user => res.status(200).json({ status: 'Created one user', user }))
+      .catch(error => console.log(error));
+    })
+    .catch(error => console.log(error));
+  },
+
+  login: (req, res, next) => {
+    req.session.destroy();
+    res.status(200).json( {} );
+  },
+
+  logout: (req, res, next) => {
+    req.session.destroy();
+    res.status(200).json( {} );
+  },
+
   createUser: (req, res, next) => {
-    // console.log('req.body', req.body)
     const { nickname, password, email, ip, location, personal, rating, photo } = req.body;
     return User
     .create({ nickname, password, email, ip, location, personal, rating, photo })
