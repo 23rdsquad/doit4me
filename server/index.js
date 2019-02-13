@@ -7,7 +7,7 @@ require('dotenv').config();
 const app = express();
 app.use(bodyParser.json());
 
-// Middlewares
+// Middleware initializtion
 const checkForSession = require('./middlewares/checkForSession');
 
 // Session initialization
@@ -19,6 +19,9 @@ app.use( session({
     maxAge: 200 * 1000
   }
 }));
+
+// Using session middleware
+app.use( checkForSession );
 
 // Connecting controllers
 const users_controller = require('./controllers/users_controller');
