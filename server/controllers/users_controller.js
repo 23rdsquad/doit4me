@@ -6,7 +6,9 @@ const { User } = db;
 
 module.exports = {
   register: (req, res, next) => {
-    let { nickname, password, email, ip, location, personal, rating, photo } = req.body;
+    const { nickname, email, ip, location, personal, rating, photo } = req.body;
+    let { password } = req.body;
+    // using bcrypt to encrypt the password
     bcrypt.hash(password, saltRound)
     .then(hashedPassword => {
       password = hashedPassword;
@@ -19,8 +21,36 @@ module.exports = {
   },
 
   login: (req, res, next) => {
-    req.session.destroy();
-    res.status(200).json( {} );
+    // getting user from the request
+    const { nickname, password } = req.body;
+    return User
+    // looking for a user with the nickname from the request
+    .findAll({
+      where: {
+        nickname: nickname
+      }
+    })
+    .then(users => {
+      // if there is no user with a requested nickname we return error 403
+      if (users.length) {
+        bcrypt.compare(password, users[0].dataValues.password).then(passwordMatch => {
+          // if the password does not correspond with one in database we return error 401
+          if (passwordMatch) {
+            req.session.user = {
+              nickname: users[0].dataValues.nickname
+            }
+            // if the user was not initialized we create it in checkForSession middleware
+            res.status(200).json( req.session.user );
+          } else {
+            res.status(401).json({ message: 'Wrong password' });
+          }
+        })
+        .catch((error) => res.status(500).send(error));
+      } else {
+        res.status(403).json({ message: "That user is not registered" });
+      }
+    })
+    .catch(error => res.status(500).send(error));
   },
 
   logout: (req, res, next) => {

@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const bodyParser = require('body-parser');
 
 require('dotenv').config();
@@ -6,9 +7,24 @@ require('dotenv').config();
 const app = express();
 app.use(bodyParser.json());
 
+// Middlewares
+const checkForSession = require('./middlewares/checkForSession');
+
+// Session initialization
+app.use( session({
+  secret: process.env.SECRET_KEY,
+  saveUninitialized: false,
+  resave: false,
+  cookie: {
+    maxAge: 200 * 1000
+  }
+}));
+
+// Connecting controllers
 const users_controller = require('./controllers/users_controller');
 const tasks_controller = require('./controllers/tasks_controller');
 const reviews_controller = require('./controllers/reviews_controller');
+
 
 app.post('/register', users_controller.register);
 app.post('/login', users_controller.login);
