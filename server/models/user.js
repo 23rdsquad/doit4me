@@ -13,5 +13,11 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true,
     paranoid: true
   });
+  User.associate = function(models) {
+    User.hasMany(models.Task, {
+      foreignKey: 'id',
+      onDelete: 'CASCADE'
+    })
+  };
   return User;
 };
