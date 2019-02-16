@@ -4,9 +4,9 @@ const { Task } = db;
 
 module.exports = {
   createTask: (req, res, next) => {
-    const { title, category, creator_id, contractor_id, price, description, location, deadline, status, photos, requests } = req.body;
+    const { title, category, creator_id, contractor_id, price, description, zip, deadline, status, photos, requests } = req.body;
     return Task
-    .create({ title, category, creator_id, contractor_id, price, description, location, deadline, status, photos, requests })
+    .create({ title, category, creator_id, contractor_id, price, description, zip, deadline, status, photos, requests })
     .then(task => res.status(200).json({ status: 'Created one task', task }))
     .catch(error => console.log(error));
   },
@@ -28,7 +28,7 @@ module.exports = {
 
   updateTask: (req, res, next) => {
     const { id } = req.params;
-    const { title, category, creator_id, contractor_id, price, description, location, deadline, status, photos, requests } = req.body;
+    const { title, category, creator_id, contractor_id, price, description, zip, deadline, status, photos, requests } = req.body;
     return Task
     .findById(id)
     .then(task => {
@@ -43,7 +43,7 @@ module.exports = {
         contractor_id: contractor_id,
         price: price,
         description: description,
-        location: location,
+        zip: zip,
         deadline: deadline,
         status: status,
         photos: photos,

@@ -9,18 +9,23 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nickname: {
+        allosNull: false,
         type: Sequelize.STRING
       },
       password: {
+        allosNull: false,
         type: Sequelize.STRING
       },
       email: {
+        allosNull: false,
         type: Sequelize.STRING
       },
       ip: {
+        allosNull: false,
         type: Sequelize.STRING
       },
-      location: {
+      zip: {
+        allosNull: false,
         type: Sequelize.INTEGER
       },
       personal: {
@@ -28,6 +33,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       rating: {
+        allosNull: false,
         type: Sequelize.FLOAT
       },
       photo: {

@@ -26,7 +26,7 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
-      location: {
+      zip: {
         type: Sequelize.INTEGER
       },
       deadline: {
