@@ -7,9 +7,11 @@ import Footer from "./components/Footer/Footer";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div id='wrapper'>
         <Navbar />
-        {routes}
+        <div className='wrapper_body'>
+          {routes}
+        </div>
         <Footer />
       </div>
     );
