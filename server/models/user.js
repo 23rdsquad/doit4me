@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       allosNull: false,
       type: DataTypes.STRING // has to be array
     },
-    location: {
+    zip: {
       allosNull: false,
       type: DataTypes.INTEGER
     },

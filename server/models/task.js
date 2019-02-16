@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
       allosNull: false,
       type: DataTypes.STRING
     },
-    location: {
+    zip: {
       allosNull: false,
       type: DataTypes.INTEGER
     },
