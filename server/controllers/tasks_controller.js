@@ -26,6 +26,17 @@ module.exports = {
     .catch(error => console.log(error));
   },
 
+  getTasksByUserId: (req, res, next) => {
+    const { user_id } = req.params;
+    return Task
+    .findAll({
+      include: [{
+        model: User,
+        where: ["creator_id = user_id"]
+      }]
+    })
+  },
+
   updateTask: (req, res, next) => {
     const { id } = req.params;
     const { title, category, creator_id, contractor_id, price, description, zip, deadline, status, photos, requests } = req.body;
@@ -69,5 +80,5 @@ module.exports = {
       .catch(error => console.log(error));
     })
     .catch(error => console.log(error));
-  },
+  }
 };
