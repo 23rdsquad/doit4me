@@ -49,8 +49,5 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     })
   };
-  // User.associate = function(models) {
-    
-  // };
   return User;
 };

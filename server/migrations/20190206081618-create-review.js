@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       description: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       deletedAt: {
         type: Sequelize.DATE
