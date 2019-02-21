@@ -26,7 +26,11 @@ module.exports = (sequelize, DataTypes) => {
     paranoid: true
   });
   Review.associate = function(models) {
-    // associations can be defined here
+    Review.belongsTo(models.User, {
+      as: 'User',
+      foreignKey: 'creator_id',
+      onDelete: 'CASCADE'
+    })
   };
   return Review;
 };

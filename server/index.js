@@ -49,6 +49,7 @@ app.delete('/task/delete/:id', tasks_controller.destroyTask);
 app.post('/review/create', reviews_controller.createReview);
 app.get('/reviews', reviews_controller.getAllReviews);
 app.get('/review/get/:id', reviews_controller.getSingleReview);
+app.get('/review/get/all/:user_id', reviews_controller.getReviewsByUserId);
 app.put('/review/update/:id', reviews_controller.updateReview);
 app.delete('/review/delete/:id', reviews_controller.destroyReview);
 

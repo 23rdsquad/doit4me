@@ -42,7 +42,15 @@ module.exports = (sequelize, DataTypes) => {
       as: 'Task',
       foreignKey: 'creator_id',
       onDelete: 'CASCADE'
+    }),
+    User.hasMany(models.Review, {
+      as: 'Review',
+      foreignKey: 'creator_id',
+      onDelete: 'CASCADE'
     })
   };
+  // User.associate = function(models) {
+    
+  // };
   return User;
 };
