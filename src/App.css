@@ -3,12 +3,12 @@
 }
 
 #wrapper{
-  min-height: 100vh;
+  height: 100vh;
 }
 .wrapper_body{
   background: green;
-  min-height: 100%; /* will cover the 100% of viewport */
+  height: 85%; 
   overflow: hidden;
   display: block;
-  padding-bottom: 100px; /* height of your footer */
 }
+
