@@ -2,43 +2,43 @@
 module.exports = (sequelize, DataTypes) => {
   const Task = sequelize.define('Task', {
     title: {
-      allosNull: false,
+      allowNull: false,
       type: DataTypes.STRING
     },
     category: {
-      allosNull: false,
+      allowNull: false,
       type: DataTypes.STRING
     },
     creator_id: {
-      allosNull: false,
+      allowNull: false,
       type: DataTypes.INTEGER
     },
     contractor_id: {
-      allosNull: true,
+      allowNull: true,
       type: DataTypes.INTEGER
     },
     price: {
-      allosNull: false,
+      allowNull: false,
       type: DataTypes.INTEGER
     },
     description: {
-      allosNull: false,
+      allowNull: false,
       type: DataTypes.STRING
     },
     zip: {
-      allosNull: false,
+      allowNull: false,
       type: DataTypes.INTEGER
     },
     deadline: {
-      allosNull: true,
+      allowNull: true,
       type: DataTypes.DATE
     },
     status: {
-      allosNull: true,
+      allowNull: true,
       type: DataTypes.STRING
     },
     photos: {
-      allosNull: true,
+      allowNull: true,
       type: DataTypes.STRING
     },
     requests: DataTypes.STRING
@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   Task.associate = function (models) {
     Task.belongsTo(models.User, {
-      as: 'user',
+      as: 'User',
       foreignKey: 'creator_id',
       onDelete: 'CASCADE' })
   }

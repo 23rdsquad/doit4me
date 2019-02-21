@@ -30,11 +30,7 @@ module.exports = {
       const { user_id } = req.params;
       return Task
       .findAll({
-        include: [{
-          model: "User",
-          as: 'user',
-          where: ["creator_id = user_id"]
-        }]
+        where: {creator_id: user_id}
       })
       .then(tasks => res.status(200).json({ status: 'Retrieved tasks for the user', tasks}))
       .catch(error => console.log(error));

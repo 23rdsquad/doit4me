@@ -2,35 +2,35 @@
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     nickname: {
-      allosNull: false,
+      allowNull: false,
       type: DataTypes.STRING
     },
     password: {
-      allosNull: false,
+      allowNull: false,
       type: DataTypes.STRING
     },
     email: {
-      allosNull: false,
+      allowNull: false,
       type: DataTypes.STRING
     },
     ip: {
-      allosNull: false,
+      allowNull: false,
       type: DataTypes.STRING // has to be array
     },
     zip: {
-      allosNull: false,
+      allowNull: false,
       type: DataTypes.INTEGER
     },
     personal: {
-      allosNull: false,
+      allowNull: false,
       type: DataTypes.STRING // has to be array
     },
     rating: {
-      allosNull: false,
+      allowNull: false,
       type: DataTypes.FLOAT
     },
     photo: {
-      allosNull: false,
+      allowNull: false,
       type: DataTypes.STRING // for now string, later will be base64
     }
   }, {
@@ -39,7 +39,8 @@ module.exports = (sequelize, DataTypes) => {
   });
   User.associate = function(models) {
     User.hasMany(models.Task, {
-      foreignKey: 'id',
+      as: 'Task',
+      foreignKey: 'creator_id',
       onDelete: 'CASCADE'
     })
   };
