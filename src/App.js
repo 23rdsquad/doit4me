@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div id='wrapper'>
-        <Navbar />
+        <Navbar id='navbar'/>
         <div className='wrapper_body'>
           {routes}
         </div>
