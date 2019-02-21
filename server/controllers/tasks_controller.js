@@ -26,16 +26,19 @@ module.exports = {
     .catch(error => console.log(error));
   },
 
-  getTasksByUserId: (req, res, next) => {
-    const { user_id } = req.params;
-    return Task
-    .findAll({
-      include: [{
-        model: User,
-        where: ["creator_id = user_id"]
-      }]
-    })
-  },
+    getTasksByUserId: (req, res, next) => {
+      const { user_id } = req.params;
+      return Task
+      .findAll({
+        include: [{
+          model: "User",
+          as: 'user',
+          where: ["creator_id = user_id"]
+        }]
+      })
+      .then(tasks => res.status(200).json({ status: 'Retrieved tasks for the user', tasks}))
+      .catch(error => console.log(error));
+    },
 
   updateTask: (req, res, next) => {
     const { id } = req.params;

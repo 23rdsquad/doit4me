@@ -48,9 +48,9 @@ module.exports = (sequelize, DataTypes) => {
   });
   Task.associate = function (models) {
     Task.belongsTo(models.User, {
+      as: 'user',
       foreignKey: 'creator_id',
-      onDelete: 'CASCADE'
-    })
+      onDelete: 'CASCADE' })
   }
   return Task;
 };

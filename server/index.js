@@ -42,7 +42,7 @@ app.delete('/user/delete/:id', users_controller.destroyUser);
 app.post('/task/create', tasks_controller.createTask);
 app.get('/tasks', tasks_controller.getAllTasks);
 app.get('/task/get/:id', tasks_controller.getSingleTask);
-app.get('/task/get/:user_id', tasks_controller.getTasksByUserId);
+app.get('/task/get/all/:user_id', tasks_controller.getTasksByUserId);
 app.put('/task/update/:id', tasks_controller.updateTask);
 app.delete('/task/delete/:id', tasks_controller.destroyTask);
 
