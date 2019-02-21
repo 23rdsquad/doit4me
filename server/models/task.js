@@ -41,7 +41,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
       type: DataTypes.STRING
     },
-    requests: DataTypes.STRING
+    requests: {
+      allowNull: true,
+      type: DataTypes.STRING
+    }
   }, {
     timestamps: true,
     paranoid: true
