@@ -64,7 +64,7 @@
                 "rating": {
                   "type": "float"
                 },
-                "photo": {
+                "avatar": {
                   "type": "string"
                 }
               }
@@ -103,7 +103,7 @@
         "rating": {
           "type": "float"
         },
-        "photo": {
+        "avatar": {
           "type": "string"
         }
       }

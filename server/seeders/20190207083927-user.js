@@ -10,7 +10,7 @@ module.exports = {
       zip: 98165,
       personal: 'I love helping people',
       rating: 5,
-      photo: '1234567890',
+      avatar: '1234567890',
       deletedAt: null,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -22,7 +22,7 @@ module.exports = {
       zip: 98168,
       personal: 'Hello, how are you?',
       rating: 5,
-      photo: '1234567890',
+      avatar: '1234567890',
       deletedAt: null,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -34,7 +34,7 @@ module.exports = {
       zip: 98165,
       personal: 'Please give me some job',
       rating: 5,
-      photo: '1234567890',
+      avatar: '1234567890',
       deletedAt: null,
       createdAt: new Date(),
       updatedAt: new Date()
