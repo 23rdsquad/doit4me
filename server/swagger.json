@@ -150,6 +150,30 @@
           "type": "string"
         }
       }
+    },
+    "Review": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "job_id": {
+          "type": "integer"
+        },
+        "creator_id": {
+          "type": "integer"
+        },
+        "contractor_id": {
+          "type": "integer"
+        },
+        "rate": {
+          "type": "integer"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
     }
   }
 }
