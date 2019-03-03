@@ -1,11 +1,17 @@
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
+const router = require('express').Router();
+
+const swaggerUi = require('swagger-ui-express'),
+    swaggerDocument = require('./swagger.json');
 
 require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.json());
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api/v1', router);
 
 // Middleware initializtion
 const checkForSession = require('./middlewares/checkForSession');
