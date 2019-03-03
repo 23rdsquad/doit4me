@@ -33,38 +33,7 @@
               "$ref": "#/definitions/User"
             }
           }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "schema": {
-            "type": "array",
-            "items": {
-              "required": "email",
-              "properties": {
-                "nickname": {
-                  "type": "string"
-                },
-                "password": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "ip": {
-                  "type": "string"
-                },
-                "zip": {
-                  "type": "string"
-                },
-                "personal": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
+        ]
       }
     }
   }
