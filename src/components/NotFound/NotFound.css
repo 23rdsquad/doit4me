@@ -28,9 +28,6 @@
 }
 #body{
   margin-top: -15px;
-  background-image:url(../images/repair.jpg);
-  background-size:cover;
-  background-attachment: fixed;
   height: 95vh;
   padding-top: 20vh;
 }
@@ -41,7 +38,3 @@
   background-color: rgba(255,255,255,0.86);
   border-radius: 25px;
 }
-@media (max-width:991px) {
-    width:75%;
-  }
-  
