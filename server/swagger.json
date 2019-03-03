@@ -113,6 +113,9 @@
               "items": {
                 "required": "email",
                 "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
                   "nickname": {
                     "type": "string"
                   },
@@ -164,6 +167,141 @@
               "items": {
                 "required": "email",
                 "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "nickname": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "ip": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "personal": {
+                    "type": "string"
+                  },
+                  "rating": {
+                    "type": "float"
+                  },
+                  "avatar": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/user/get/{id}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get a single user",
+        "description": "getSingleUser",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "nickname": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "ip": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "personal": {
+                    "type": "string"
+                  },
+                  "rating": {
+                    "type": "float"
+                  },
+                  "avatar": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/user/update/{id}": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update user info",
+        "description": "updateUser",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
                   "nickname": {
                     "type": "string"
                   },
