@@ -73,5 +73,40 @@
         }
       }
     }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "nickname": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "ip": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        },
+        "personal": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "string"
+        },
+        "photo": {
+          "type": "string"
+        }
+      }
+    }
   }
 }
