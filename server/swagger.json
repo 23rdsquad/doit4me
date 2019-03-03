@@ -14,20 +14,91 @@
   "host": "petstore.swagger.io",
   "basePath": "/v2",
   "paths": {
-    "/users": {
-      "get": {
+    "/user/create": {
+      "post": {
         "tags": [
-          "user"
+          "User"
         ],
-        "summary": "Get all the users",
-        "description": "getAllUsers",
+        "summary": "Create a new user",
+        "description": "createUser",
         "consumes": ["application/json"],
         "produces": ["application/json"],
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "description": "Getting all the users in the database",
+            "name": "nickname",
+            "type": "string",
+            "in": "query",
+            "description": "Nickname",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "password",
+            "type": "string",
+            "in": "query",
+            "description": "Password",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "email",
+            "type": "string",
+            "in": "query",
+            "description": "Email",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "ip",
+            "type": "string",
+            "in": "query",
+            "description": "List of IP addresses. Has to be array",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "zip",
+            "type": "integer",
+            "in": "query",
+            "description": "ZIP code",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "personal",
+            "type": "string",
+            "in": "query",
+            "description": "Personal information. Has to be object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "rating",
+            "type": "float",
+            "in": "query",
+            "description": "Rating",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "avatar",
+            "type": "string",
+            "in": "query",
+            "description": "Profile photo. Has to be base64",
             "required": true,
             "schema": {
               "$ref": "#/definitions/User"
@@ -36,39 +107,93 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
-          },
-          "schema": {
-            "type": "array",
-            "items": {
-              "required": "email",
-              "properties": {
-                "nickname": {
-                  "type": "string"
-                },
-                "password": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "ip": {
-                  "type": "string"
-                },
-                "zip": {
-                  "type": "integer"
-                },
-                "personal": {
-                  "type": "string"
-                },
-                "rating": {
-                  "type": "float"
-                },
-                "avatar": {
-                  "type": "string"
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "nickname": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "ip": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "personal": {
+                    "type": "string"
+                  },
+                  "rating": {
+                    "type": "float"
+                  },
+                  "avatar": {
+                    "type": "string"
+                  }
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get all the users",
+        "description": "getAllUsers",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "nickname": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "ip": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "personal": {
+                    "type": "string"
+                  },
+                  "rating": {
+                    "type": "float"
+                  },
+                  "avatar": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error!"
           }
         }
       }

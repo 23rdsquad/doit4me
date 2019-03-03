@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     avatar: {
       allowNull: false,
-      type: DataTypes.STRING // for now string, later will be base64 (maybe avatar)
+      type: DataTypes.STRING // for now string, later will be base64
     }
   }, {
     timestamps: true,
