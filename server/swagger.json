@@ -14,6 +14,58 @@
   "host": "petstore.swagger.io",
   "basePath": "/v2",
   "paths": {
-    "/users": {}
+    "/users": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Get all the users",
+        "description": "getAllUsers",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Getting all the users in the database",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "schema": {
+            "type": "array",
+            "items": {
+              "required": "email",
+              "properties": {
+                "nickname": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "ip": {
+                  "type": "string"
+                },
+                "zip": {
+                  "type": "string"
+                },
+                "personal": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
