@@ -1,0 +1,19 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API documentation for doit4me app",
+    "version": "1.0.0",
+    "title": "Swagger doit4me",
+    "contact": {
+      "email": "in43sh@gmail.com"
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "host": "petstore.swagger.io",
+  "basePath": "/v2",
+  "paths": {
+    "/users": {}
+  }
+}
