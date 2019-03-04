@@ -450,7 +450,7 @@
           },
           {
             "name": "contractor_id",
-            "type": "string",
+            "type": "integer",
             "in": "query",
             "description": "Id of task contractor",
             "required": true,
@@ -540,28 +540,37 @@
                   "id": {
                     "type": "integer"
                   },
-                  "nickname": {
+                  "title": {
                     "type": "string"
                   },
-                  "password": {
+                  "category": {
                     "type": "string"
                   },
-                  "email": {
-                    "type": "string"
+                  "creator_id": {
+                    "type": "integer"
                   },
-                  "ip": {
+                  "contractor_id": {
+                    "type": "integer"
+                  },
+                  "price": {
+                    "type": "integer"
+                  },
+                  "description": {
                     "type": "string"
                   },
                   "zip": {
                     "type": "integer"
                   },
-                  "personal": {
+                  "deadline": {
+                    "type": "date"
+                  },
+                  "status": {
                     "type": "string"
                   },
-                  "rating": {
-                    "type": "float"
+                  "photos": {
+                    "type": "string"
                   },
-                  "avatar": {
+                  "requests": {
                     "type": "string"
                   }
                 }
