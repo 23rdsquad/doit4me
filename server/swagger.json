@@ -407,6 +407,172 @@
           }
         }
       }
+    },
+    "/task/create": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Create a new task",
+        "description": "createTask",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "title",
+            "type": "string",
+            "in": "query",
+            "description": "Title",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "in": "query",
+            "description": "Category",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "creator_id",
+            "type": "integer",
+            "in": "query",
+            "description": "Id of task creator",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "contractor_id",
+            "type": "string",
+            "in": "query",
+            "description": "Id of task contractor",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "price",
+            "type": "integer",
+            "in": "query",
+            "description": "Price",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "in": "query",
+            "description": "Description",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "zip",
+            "type": "integer",
+            "in": "query",
+            "description": "ZIP code",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "deadline",
+            "type": "date",
+            "in": "query",
+            "description": "Personal information. Has to be object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "status",
+            "type": "string",
+            "in": "query",
+            "description": "Rating",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "photos",
+            "type": "string",
+            "in": "query",
+            "description": "Profile photo. Has to be base64",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "requests",
+            "type": "string",
+            "in": "query",
+            "description": "Profile photo. Has to be base64",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "nickname": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "ip": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "personal": {
+                    "type": "string"
+                  },
+                  "rating": {
+                    "type": "float"
+                  },
+                  "avatar": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
     }
   },
   "definitions": {
