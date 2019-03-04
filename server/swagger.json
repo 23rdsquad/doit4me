@@ -330,6 +330,78 @@
               }
             }
           },
+          "404": {
+            "description": "User not found!"
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/user/delete/{id}": {
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Delete a user",
+        "description": "updateUser",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "nickname": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "ip": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "personal": {
+                    "type": "string"
+                  },
+                  "rating": {
+                    "type": "float"
+                  },
+                  "avatar": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found!"
+          },
           "500": {
             "description": "Internal server error!"
           }
