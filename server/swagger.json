@@ -645,6 +645,81 @@
           }
         }
       }
+    },
+    "/task/get/{id}": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Get a single task",
+        "description": "getSingleTask",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "category": {
+                    "type": "string"
+                  },
+                  "creator_id": {
+                    "type": "integer"
+                  },
+                  "contractor_id": {
+                    "type": "integer"
+                  },
+                  "price": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "deadline": {
+                    "type": "date"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "photos": {
+                    "type": "string"
+                  },
+                  "requests": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
     }
   },
   "definitions": {
