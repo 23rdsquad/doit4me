@@ -4,9 +4,9 @@ const { Review } = db;
 
 module.exports = {
   createReview: (req, res, next) => {
-    const { job_id, creator_id, contractor_id, rate, description } = req.body;
+    const { task_id, creator_id, contractor_id, rate, description } = req.body;
     return Review
-    .create({ job_id, creator_id, contractor_id, rate, description })
+    .create({ task_id, creator_id, contractor_id, rate, description })
     .then(review => res.status(200).json({ status: 'Created one review', review }))
     .catch(error => console.log(error));
   },
@@ -38,7 +38,7 @@ module.exports = {
 
   updateReview: (req, res, next) => {
     const { id } = req.params;
-    const { job_id, creator_id, contractor_id, rate, description } = req.body;
+    const { task_id, creator_id, contractor_id, rate, description } = req.body;
     return Review
     .findById(id)
     .then(review => {
@@ -47,7 +47,7 @@ module.exports = {
       }
       return review
       .update({
-        job_id: job_id,
+        task_id: task_id,
         creator_id: creator_id,
         contractor_id: contractor_id,
         rate: rate,
