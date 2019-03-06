@@ -1120,6 +1120,66 @@
           }
         }
       }
+    },
+    "/review/delete/{id}": {
+      "get": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Delete a single review",
+        "description": "getSingleReview",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "task_id": {
+                    "type": "integer"
+                  },
+                  "creator_id": {
+                    "type": "integer"
+                  },
+                  "contractor_id": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found!"
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
     }
   },
   "definitions": {
