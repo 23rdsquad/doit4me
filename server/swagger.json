@@ -678,37 +678,19 @@
                   "id": {
                     "type": "integer"
                   },
-                  "title": {
-                    "type": "string"
-                  },
-                  "category": {
+                  "job_id": {
                     "type": "string"
                   },
                   "creator_id": {
-                    "type": "integer"
+                    "type": "string"
                   },
                   "contractor_id": {
                     "type": "integer"
                   },
-                  "price": {
+                  "rate": {
                     "type": "integer"
                   },
                   "description": {
-                    "type": "string"
-                  },
-                  "zip": {
-                    "type": "integer"
-                  },
-                  "deadline": {
-                    "type": "date"
-                  },
-                  "status": {
-                    "type": "string"
-                  },
-                  "photos": {
-                    "type": "string"
-                  },
-                  "requests": {
                     "type": "string"
                   }
                 }
@@ -891,7 +873,7 @@
             "name": "job_id",
             "type": "integer",
             "in": "query",
-            "description": "Title",
+            "description": "Id of the task",
             "required": true,
             "schema": {
               "$ref": "#/definitions/Review"
@@ -901,7 +883,7 @@
             "name": "creator_id",
             "type": "integer",
             "in": "query",
-            "description": "Category",
+            "description": "Id of task creator",
             "required": true,
             "schema": {
               "$ref": "#/definitions/Review"
@@ -911,7 +893,7 @@
             "name": "contractor_id",
             "type": "integer",
             "in": "query",
-            "description": "Id of task creator",
+            "description": "Id of task contractor",
             "required": true,
             "schema": {
               "$ref": "#/definitions/Review"
@@ -919,9 +901,9 @@
           },
           {
             "name": "rate",
-            "type": "float",
+            "type": "integer",
             "in": "query",
-            "description": "Id of task contractor",
+            "description": "Rate of the task",
             "required": true,
             "schema": {
               "$ref": "#/definitions/Review"
@@ -931,7 +913,7 @@
             "name": "description",
             "type": "string",
             "in": "query",
-            "description": "Description",
+            "description": "Review content",
             "required": true,
             "schema": {
               "$ref": "#/definitions/Review"
@@ -949,11 +931,8 @@
                   "id": {
                     "type": "integer"
                   },
-                  "title": {
-                    "type": "string"
-                  },
-                  "category": {
-                    "type": "string"
+                  "job_id": {
+                    "type": "integer"
                   },
                   "creator_id": {
                     "type": "integer"
@@ -961,25 +940,10 @@
                   "contractor_id": {
                     "type": "integer"
                   },
-                  "price": {
+                  "rate": {
                     "type": "integer"
                   },
                   "description": {
-                    "type": "string"
-                  },
-                  "zip": {
-                    "type": "integer"
-                  },
-                  "deadline": {
-                    "type": "date"
-                  },
-                  "status": {
-                    "type": "string"
-                  },
-                  "photos": {
-                    "type": "string"
-                  },
-                  "requests": {
                     "type": "string"
                   }
                 }
@@ -1023,6 +987,63 @@
                   },
                   "rate": {
                     "type": "float"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/review/get/{id}": {
+      "get": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Get a single review",
+        "description": "getSingleReview",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "job_id": {
+                    "type": "integer"
+                  },
+                  "creator_id": {
+                    "type": "integer"
+                  },
+                  "contractor_id": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
                   },
                   "description": {
                     "type": "string"
