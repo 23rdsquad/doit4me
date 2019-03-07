@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Reviews', [{
-      job_id: 1,
+      task_id: 1,
       contractor_id: 1,
       creator_id: 2,
       rate: 5,
@@ -12,7 +12,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      job_id: 2,
+      task_id: 2,
       contractor_id: 1,
       creator_id: 3,
       rate: 4,
@@ -21,7 +21,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      job_id: 3,
+      task_id: 3,
       contractor_id: 2,
       creator_id: 2,
       rate: 5,

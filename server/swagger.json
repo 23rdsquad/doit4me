@@ -27,7 +27,7 @@
           {
             "name": "nickname",
             "type": "string",
-            "in": "query",
+            "in": "path",
             "description": "Nickname",
             "required": true,
             "schema": {
@@ -37,7 +37,7 @@
           {
             "name": "password",
             "type": "string",
-            "in": "query",
+            "in": "path",
             "description": "Password",
             "required": true,
             "schema": {
@@ -47,7 +47,7 @@
           {
             "name": "email",
             "type": "string",
-            "in": "query",
+            "in": "path",
             "description": "Email",
             "required": true,
             "schema": {
@@ -57,7 +57,7 @@
           {
             "name": "ip",
             "type": "string",
-            "in": "query",
+            "in": "path",
             "description": "List of IP addresses. Has to be array",
             "required": true,
             "schema": {
@@ -67,8 +67,8 @@
           {
             "name": "zip",
             "type": "integer",
-            "in": "query",
-            "description": "ZIP code",
+            "in": "path",
+            "description": "User ZIP code",
             "required": true,
             "schema": {
               "$ref": "#/definitions/User"
@@ -77,7 +77,7 @@
           {
             "name": "personal",
             "type": "string",
-            "in": "query",
+            "in": "path",
             "description": "Personal information. Has to be object",
             "required": true,
             "schema": {
@@ -87,7 +87,7 @@
           {
             "name": "rating",
             "type": "float",
-            "in": "query",
+            "in": "path",
             "description": "Rating",
             "required": true,
             "schema": {
@@ -97,7 +97,7 @@
           {
             "name": "avatar",
             "type": "string",
-            "in": "query",
+            "in": "path",
             "description": "Profile photo. Has to be base64",
             "required": true,
             "schema": {
@@ -217,7 +217,7 @@
           {
             "name": "id",
             "type": "integer",
-            "in": "query",
+            "in": "path",
             "description": "id",
             "required": true,
             "schema": {
@@ -264,6 +264,9 @@
               }
             }
           },
+          "404": {
+            "description": "User not found!"
+          },
           "500": {
             "description": "Internal server error!"
           }
@@ -283,7 +286,7 @@
           {
             "name": "id",
             "type": "integer",
-            "in": "query",
+            "in": "path",
             "description": "id",
             "required": true,
             "schema": {
@@ -352,7 +355,7 @@
           {
             "name": "id",
             "type": "integer",
-            "in": "query",
+            "in": "path",
             "description": "id",
             "required": true,
             "schema": {
@@ -421,7 +424,7 @@
           {
             "name": "title",
             "type": "string",
-            "in": "query",
+            "in": "path",
             "description": "Title",
             "required": true,
             "schema": {
@@ -431,7 +434,7 @@
           {
             "name": "category",
             "type": "string",
-            "in": "query",
+            "in": "path",
             "description": "Category",
             "required": true,
             "schema": {
@@ -441,7 +444,7 @@
           {
             "name": "creator_id",
             "type": "integer",
-            "in": "query",
+            "in": "path",
             "description": "Id of task creator",
             "required": true,
             "schema": {
@@ -451,7 +454,7 @@
           {
             "name": "contractor_id",
             "type": "integer",
-            "in": "query",
+            "in": "path",
             "description": "Id of task contractor",
             "required": true,
             "schema": {
@@ -461,7 +464,7 @@
           {
             "name": "price",
             "type": "integer",
-            "in": "query",
+            "in": "path",
             "description": "Price",
             "required": true,
             "schema": {
@@ -471,7 +474,7 @@
           {
             "name": "description",
             "type": "string",
-            "in": "query",
+            "in": "path",
             "description": "Description",
             "required": true,
             "schema": {
@@ -481,7 +484,7 @@
           {
             "name": "zip",
             "type": "integer",
-            "in": "query",
+            "in": "path",
             "description": "ZIP code",
             "required": true,
             "schema": {
@@ -491,7 +494,7 @@
           {
             "name": "deadline",
             "type": "date",
-            "in": "query",
+            "in": "path",
             "description": "Personal information. Has to be object",
             "required": true,
             "schema": {
@@ -501,7 +504,7 @@
           {
             "name": "status",
             "type": "string",
-            "in": "query",
+            "in": "path",
             "description": "Rating",
             "required": true,
             "schema": {
@@ -511,7 +514,7 @@
           {
             "name": "photos",
             "type": "string",
-            "in": "query",
+            "in": "path",
             "description": "Profile photo. Has to be base64",
             "required": true,
             "schema": {
@@ -521,7 +524,7 @@
           {
             "name": "requests",
             "type": "string",
-            "in": "query",
+            "in": "path",
             "description": "Profile photo. Has to be base64",
             "required": true,
             "schema": {
@@ -659,7 +662,7 @@
           {
             "name": "id",
             "type": "integer",
-            "in": "query",
+            "in": "path",
             "description": "id",
             "required": true,
             "schema": {
@@ -678,42 +681,27 @@
                   "id": {
                     "type": "integer"
                   },
-                  "title": {
-                    "type": "string"
-                  },
-                  "category": {
+                  "task_id": {
                     "type": "string"
                   },
                   "creator_id": {
-                    "type": "integer"
+                    "type": "string"
                   },
                   "contractor_id": {
                     "type": "integer"
                   },
-                  "price": {
+                  "rate": {
                     "type": "integer"
                   },
                   "description": {
-                    "type": "string"
-                  },
-                  "zip": {
-                    "type": "integer"
-                  },
-                  "deadline": {
-                    "type": "date"
-                  },
-                  "status": {
-                    "type": "string"
-                  },
-                  "photos": {
-                    "type": "string"
-                  },
-                  "requests": {
                     "type": "string"
                   }
                 }
               }
             }
+          },
+          "404": {
+            "description": "User not found!"
           },
           "500": {
             "description": "Internal server error!"
@@ -734,7 +722,7 @@
           {
             "name": "id",
             "type": "integer",
-            "in": "query",
+            "in": "path",
             "description": "id",
             "required": true,
             "schema": {
@@ -812,7 +800,7 @@
           {
             "name": "id",
             "type": "integer",
-            "in": "query",
+            "in": "path",
             "description": "id",
             "required": true,
             "schema": {
@@ -862,6 +850,328 @@
                     "type": "string"
                   },
                   "requests": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found!"
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/review/create": {
+      "post": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Create a new review",
+        "description": "createReview",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "task_id",
+            "type": "integer",
+            "in": "path",
+            "description": "Id of the task",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          },
+          {
+            "name": "creator_id",
+            "type": "integer",
+            "in": "path",
+            "description": "Id of task creator",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          },
+          {
+            "name": "contractor_id",
+            "type": "integer",
+            "in": "path",
+            "description": "Id of task contractor",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          },
+          {
+            "name": "rate",
+            "type": "integer",
+            "in": "path",
+            "description": "Rate of the task",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "in": "path",
+            "description": "Review content",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "task_id": {
+                    "type": "integer"
+                  },
+                  "creator_id": {
+                    "type": "integer"
+                  },
+                  "contractor_id": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/reviews": {
+      "get": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Get all the reviews",
+        "description": "getAllReviews",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "task_id": {
+                    "type": "integer"
+                  },
+                  "creator_id": {
+                    "type": "integer"
+                  },
+                  "contractor_id": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "float"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/review/get/{id}": {
+      "get": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Get a single review",
+        "description": "getSingleReview",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "task_id": {
+                    "type": "integer"
+                  },
+                  "creator_id": {
+                    "type": "integer"
+                  },
+                  "contractor_id": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found!"
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/review/update/{id}": {
+      "put": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Update a single review",
+        "description": "updateSingleReview",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "task_id": {
+                    "type": "integer"
+                  },
+                  "creator_id": {
+                    "type": "integer"
+                  },
+                  "contractor_id": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found!"
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/review/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Delete a single review",
+        "description": "deleteSingleReview",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "task_id": {
+                    "type": "integer"
+                  },
+                  "creator_id": {
+                    "type": "integer"
+                  },
+                  "contractor_id": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "description": {
                     "type": "string"
                   }
                 }
@@ -962,7 +1272,7 @@
           "type": "integer",
           "format": "int64"
         },
-        "job_id": {
+        "task_id": {
           "type": "integer"
         },
         "creator_id": {

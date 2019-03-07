@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      job_id: {
+      task_id: {
         type: Sequelize.INTEGER
       },
       creator_id: {
