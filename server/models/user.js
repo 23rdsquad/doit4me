@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.FLOAT
     },
-    photo: {
+    avatar: {
       allowNull: false,
       type: DataTypes.STRING // for now string, later will be base64
     }
@@ -40,6 +40,11 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = function(models) {
     User.hasMany(models.Task, {
       as: 'Task',
+      foreignKey: 'creator_id',
+      onDelete: 'CASCADE'
+    }),
+    User.hasMany(models.Review, {
+      as: 'Review',
       foreignKey: 'creator_id',
       onDelete: 'CASCADE'
     })

@@ -1,11 +1,17 @@
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
+const router = require('express').Router();
+
+const swaggerUi = require('swagger-ui-express'),
+    swaggerDocument = require('./swagger.json');
 
 require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.json());
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api/v1', router);
 
 // Middleware initializtion
 const checkForSession = require('./middlewares/checkForSession');
@@ -49,6 +55,7 @@ app.delete('/task/delete/:id', tasks_controller.destroyTask);
 app.post('/review/create', reviews_controller.createReview);
 app.get('/reviews', reviews_controller.getAllReviews);
 app.get('/review/get/:id', reviews_controller.getSingleReview);
+app.get('/review/get/all/:user_id', reviews_controller.getReviewsByUserId);
 app.put('/review/update/:id', reviews_controller.updateReview);
 app.delete('/review/delete/:id', reviews_controller.destroyReview);
 

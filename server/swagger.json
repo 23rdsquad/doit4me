@@ -1,0 +1,983 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API documentation for doit4me app",
+    "version": "1.0.0",
+    "title": "Swagger doit4me",
+    "contact": {
+      "email": "in43sh@gmail.com"
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "host": "petstore.swagger.io",
+  "basePath": "/v2",
+  "paths": {
+    "/user/create": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Create a new user",
+        "description": "createUser",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "nickname",
+            "type": "string",
+            "in": "query",
+            "description": "Nickname",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "password",
+            "type": "string",
+            "in": "query",
+            "description": "Password",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "email",
+            "type": "string",
+            "in": "query",
+            "description": "Email",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "ip",
+            "type": "string",
+            "in": "query",
+            "description": "List of IP addresses. Has to be array",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "zip",
+            "type": "integer",
+            "in": "query",
+            "description": "ZIP code",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "personal",
+            "type": "string",
+            "in": "query",
+            "description": "Personal information. Has to be object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "rating",
+            "type": "float",
+            "in": "query",
+            "description": "Rating",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "avatar",
+            "type": "string",
+            "in": "query",
+            "description": "Profile photo. Has to be base64",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "nickname": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "ip": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "personal": {
+                    "type": "string"
+                  },
+                  "rating": {
+                    "type": "float"
+                  },
+                  "avatar": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get all the users",
+        "description": "getAllUsers",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "nickname": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "ip": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "personal": {
+                    "type": "string"
+                  },
+                  "rating": {
+                    "type": "float"
+                  },
+                  "avatar": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/user/get/{id}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get a single user",
+        "description": "getSingleUser",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "nickname": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "ip": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "personal": {
+                    "type": "string"
+                  },
+                  "rating": {
+                    "type": "float"
+                  },
+                  "avatar": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/user/update/{id}": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update user info",
+        "description": "updateUser",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "nickname": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "ip": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "personal": {
+                    "type": "string"
+                  },
+                  "rating": {
+                    "type": "float"
+                  },
+                  "avatar": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found!"
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/user/delete/{id}": {
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Delete a user",
+        "description": "updateUser",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "nickname": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "ip": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "personal": {
+                    "type": "string"
+                  },
+                  "rating": {
+                    "type": "float"
+                  },
+                  "avatar": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found!"
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/task/create": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Create a new task",
+        "description": "createTask",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "title",
+            "type": "string",
+            "in": "query",
+            "description": "Title",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "in": "query",
+            "description": "Category",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "creator_id",
+            "type": "integer",
+            "in": "query",
+            "description": "Id of task creator",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "contractor_id",
+            "type": "integer",
+            "in": "query",
+            "description": "Id of task contractor",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "price",
+            "type": "integer",
+            "in": "query",
+            "description": "Price",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "in": "query",
+            "description": "Description",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "zip",
+            "type": "integer",
+            "in": "query",
+            "description": "ZIP code",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "deadline",
+            "type": "date",
+            "in": "query",
+            "description": "Personal information. Has to be object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "status",
+            "type": "string",
+            "in": "query",
+            "description": "Rating",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "photos",
+            "type": "string",
+            "in": "query",
+            "description": "Profile photo. Has to be base64",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          {
+            "name": "requests",
+            "type": "string",
+            "in": "query",
+            "description": "Profile photo. Has to be base64",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "category": {
+                    "type": "string"
+                  },
+                  "creator_id": {
+                    "type": "integer"
+                  },
+                  "contractor_id": {
+                    "type": "integer"
+                  },
+                  "price": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "deadline": {
+                    "type": "date"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "photos": {
+                    "type": "string"
+                  },
+                  "requests": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/tasks": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Get all the tasks",
+        "description": "getAllTasks",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "category": {
+                    "type": "string"
+                  },
+                  "creator_id": {
+                    "type": "integer"
+                  },
+                  "contractor_id": {
+                    "type": "integer"
+                  },
+                  "price": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "deadline": {
+                    "type": "date"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "photos": {
+                    "type": "string"
+                  },
+                  "requests": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/task/get/{id}": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Get a single task",
+        "description": "getSingleTask",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "category": {
+                    "type": "string"
+                  },
+                  "creator_id": {
+                    "type": "integer"
+                  },
+                  "contractor_id": {
+                    "type": "integer"
+                  },
+                  "price": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "deadline": {
+                    "type": "date"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "photos": {
+                    "type": "string"
+                  },
+                  "requests": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/task/update/{id}": {
+      "put": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Update task info",
+        "description": "updateTask",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "category": {
+                    "type": "string"
+                  },
+                  "creator_id": {
+                    "type": "integer"
+                  },
+                  "contractor_id": {
+                    "type": "integer"
+                  },
+                  "price": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "deadline": {
+                    "type": "date"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "photos": {
+                    "type": "string"
+                  },
+                  "requests": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found!"
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    },
+    "/task/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Delete a task",
+        "description": "updateTask",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "query",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation!",
+            "schema": {
+              "type": "array",
+              "items": {
+                "required": "email",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "category": {
+                    "type": "string"
+                  },
+                  "creator_id": {
+                    "type": "integer"
+                  },
+                  "contractor_id": {
+                    "type": "integer"
+                  },
+                  "price": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "zip": {
+                    "type": "integer"
+                  },
+                  "deadline": {
+                    "type": "date"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "photos": {
+                    "type": "string"
+                  },
+                  "requests": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found!"
+          },
+          "500": {
+            "description": "Internal server error!"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "nickname": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "ip": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "integer"
+        },
+        "personal": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "float"
+        },
+        "avatar": {
+          "type": "string"
+        }
+      }
+    },
+    "Task": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "title": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "creator_id": {
+          "type": "integer"
+        },
+        "contractor_id": {
+          "type": "integer"
+        },
+        "price": {
+          "type": "integer"
+        },
+        "description": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "integer"
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string"
+        },
+        "photos": {
+          "type": "string"
+        },
+        "requests": {
+          "type": "string"
+        }
+      }
+    },
+    "Review": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "job_id": {
+          "type": "integer"
+        },
+        "creator_id": {
+          "type": "integer"
+        },
+        "contractor_id": {
+          "type": "integer"
+        },
+        "rate": {
+          "type": "integer"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

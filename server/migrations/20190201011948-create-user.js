@@ -36,7 +36,7 @@ module.exports = {
         allosNull: false,
         type: Sequelize.FLOAT
       },
-      photo: {
+      avatar: {
         allowNull: false,
         type: Sequelize.STRING
       },

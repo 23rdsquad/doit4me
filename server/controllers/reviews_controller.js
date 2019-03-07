@@ -26,6 +26,16 @@ module.exports = {
     .catch(error => console.log(error));
   },
 
+  getReviewsByUserId: (req, res, next) => {
+    const { user_id } = req.params;
+    return Review
+    .findAll({
+      where: {creator_id: user_id}
+    })
+    .then(reviews => res.status(200).json({ status: 'Retrieved reviews for the user', reviews }))
+    .catch(error => console.log(error));
+  },
+
   updateReview: (req, res, next) => {
     const { id } = req.params;
     const { job_id, creator_id, contractor_id, rate, description } = req.body;

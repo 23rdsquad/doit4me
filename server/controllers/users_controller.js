@@ -6,14 +6,14 @@ const { User } = db;
 
 module.exports = {
   register: (req, res, next) => {
-    const { nickname, email, ip, zip, personal, rating, photo } = req.body;
+    const { nickname, email, ip, zip, personal, rating, avatar } = req.body;
     let { password } = req.body;
     // using bcrypt to encrypt the password
     bcrypt.hash(password, saltRound)
     .then(hashedPassword => {
       password = hashedPassword;
       return User
-      .create({ nickname, password, email, ip, zip, personal, rating, photo })
+      .create({ nickname, password, email, ip, zip, personal, rating, avatar })
       .then(user => res.status(200).json({ status: 'Created one user', user }))
       .catch(error => console.log(error));
     })
@@ -59,9 +59,9 @@ module.exports = {
   },
 
   createUser: (req, res, next) => {
-    const { nickname, password, email, ip, zip, personal, rating, photo } = req.body;
+    const { nickname, password, email, ip, zip, personal, rating, avatar } = req.body;
     return User
-    .create({ nickname, password, email, ip, zip, personal, rating, photo })
+    .create({ nickname, password, email, ip, zip, personal, rating, avatar })
     .then(user => res.status(200).json({ status: 'Created one user', user }))
     .catch(error => console.log(error));
   },
@@ -83,7 +83,7 @@ module.exports = {
 
   updateUser: (req, res, next) => {
     const { id } = req.params;
-    const { nickname, password, email, ip, zip, personal, rating, photo } = req.body;
+    const { nickname, password, email, ip, zip, personal, rating, avatar } = req.body;
     return User
     .findById(id)
     .then(user => {
@@ -99,7 +99,7 @@ module.exports = {
         zip: zip,
         personal: personal,
         rating: rating,
-        photo: photo
+        avatar: avatar
       })
       .then(user => res.status(200).json({ status: 'Updated one user', user }))
       .catch(error => console.log(error));
