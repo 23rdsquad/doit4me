@@ -1,5 +1,5 @@
 {
-  "swagger": "2.0",
+  "openapi": "3.0.0",
   "info": {
     "description": "API documentation for doit4me app",
     "version": "1.0.0",
@@ -31,7 +31,7 @@
             "description": "Nickname",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/components/schemas/User"
             }
           },
           {
@@ -41,7 +41,7 @@
             "description": "Password",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/components/schemas/User"
             }
           },
           {
@@ -51,7 +51,7 @@
             "description": "Email",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/components/schemas/User"
             }
           },
           {
@@ -61,7 +61,7 @@
             "description": "List of IP addresses. Has to be array",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/components/schemas/User"
             }
           },
           {
@@ -71,7 +71,7 @@
             "description": "User ZIP code",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/components/schemas/User"
             }
           },
           {
@@ -81,7 +81,7 @@
             "description": "Personal information. Has to be object",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/components/schemas/User"
             }
           },
           {
@@ -91,7 +91,7 @@
             "description": "Rating",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/components/schemas/User"
             }
           },
           {
@@ -101,51 +101,16 @@
             "description": "Profile photo. Has to be base64",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/components/schemas/User"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "nickname": {
-                    "type": "string"
-                  },
-                  "password": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "ip": {
-                    "type": "string"
-                  },
-                  "zip": {
-                    "type": "integer"
-                  },
-                  "personal": {
-                    "type": "string"
-                  },
-                  "rating": {
-                    "type": "float"
-                  },
-                  "avatar": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
@@ -161,45 +126,10 @@
         "produces": ["application/json"],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "nickname": {
-                    "type": "string"
-                  },
-                  "password": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "ip": {
-                    "type": "string"
-                  },
-                  "zip": {
-                    "type": "integer"
-                  },
-                  "personal": {
-                    "type": "string"
-                  },
-                  "rating": {
-                    "type": "float"
-                  },
-                  "avatar": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
@@ -221,54 +151,19 @@
             "description": "id",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/components/schemas/User"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "nickname": {
-                    "type": "string"
-                  },
-                  "password": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "ip": {
-                    "type": "string"
-                  },
-                  "zip": {
-                    "type": "integer"
-                  },
-                  "personal": {
-                    "type": "string"
-                  },
-                  "rating": {
-                    "type": "float"
-                  },
-                  "avatar": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "404": {
-            "description": "User not found!"
+            "$ref": "#/components/responses/404"
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
@@ -290,54 +185,19 @@
             "description": "id",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/components/schemas/User"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "nickname": {
-                    "type": "string"
-                  },
-                  "password": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "ip": {
-                    "type": "string"
-                  },
-                  "zip": {
-                    "type": "integer"
-                  },
-                  "personal": {
-                    "type": "string"
-                  },
-                  "rating": {
-                    "type": "float"
-                  },
-                  "avatar": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "404": {
-            "description": "User not found!"
+            "$ref": "#/components/responses/404"
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
@@ -359,54 +219,19 @@
             "description": "id",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User"
+              "$ref": "#/components/schemas/User"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "nickname": {
-                    "type": "string"
-                  },
-                  "password": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "ip": {
-                    "type": "string"
-                  },
-                  "zip": {
-                    "type": "integer"
-                  },
-                  "personal": {
-                    "type": "string"
-                  },
-                  "rating": {
-                    "type": "float"
-                  },
-                  "avatar": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "404": {
-            "description": "User not found!"
+            "$ref": "#/components/responses/404"
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
@@ -534,54 +359,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "title": {
-                    "type": "string"
-                  },
-                  "category": {
-                    "type": "string"
-                  },
-                  "creator_id": {
-                    "type": "integer"
-                  },
-                  "contractor_id": {
-                    "type": "integer"
-                  },
-                  "price": {
-                    "type": "integer"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "zip": {
-                    "type": "integer"
-                  },
-                  "deadline": {
-                    "type": "date"
-                  },
-                  "status": {
-                    "type": "string"
-                  },
-                  "photos": {
-                    "type": "string"
-                  },
-                  "requests": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
@@ -597,54 +378,10 @@
         "produces": ["application/json"],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "title": {
-                    "type": "string"
-                  },
-                  "category": {
-                    "type": "string"
-                  },
-                  "creator_id": {
-                    "type": "integer"
-                  },
-                  "contractor_id": {
-                    "type": "integer"
-                  },
-                  "price": {
-                    "type": "integer"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "zip": {
-                    "type": "integer"
-                  },
-                  "deadline": {
-                    "type": "date"
-                  },
-                  "status": {
-                    "type": "string"
-                  },
-                  "photos": {
-                    "type": "string"
-                  },
-                  "requests": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
@@ -672,39 +409,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "task_id": {
-                    "type": "string"
-                  },
-                  "creator_id": {
-                    "type": "string"
-                  },
-                  "contractor_id": {
-                    "type": "integer"
-                  },
-                  "rate": {
-                    "type": "integer"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "404": {
-            "description": "User not found!"
+            "$ref": "#/components/responses/404"
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
@@ -732,57 +443,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "title": {
-                    "type": "string"
-                  },
-                  "category": {
-                    "type": "string"
-                  },
-                  "creator_id": {
-                    "type": "integer"
-                  },
-                  "contractor_id": {
-                    "type": "integer"
-                  },
-                  "price": {
-                    "type": "integer"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "zip": {
-                    "type": "integer"
-                  },
-                  "deadline": {
-                    "type": "date"
-                  },
-                  "status": {
-                    "type": "string"
-                  },
-                  "photos": {
-                    "type": "string"
-                  },
-                  "requests": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "404": {
-            "description": "User not found!"
+            "$ref": "#/components/responses/404"
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
@@ -810,57 +477,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "title": {
-                    "type": "string"
-                  },
-                  "category": {
-                    "type": "string"
-                  },
-                  "creator_id": {
-                    "type": "integer"
-                  },
-                  "contractor_id": {
-                    "type": "integer"
-                  },
-                  "price": {
-                    "type": "integer"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "zip": {
-                    "type": "integer"
-                  },
-                  "deadline": {
-                    "type": "date"
-                  },
-                  "status": {
-                    "type": "string"
-                  },
-                  "photos": {
-                    "type": "string"
-                  },
-                  "requests": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "404": {
-            "description": "User not found!"
+            "$ref": "#/components/responses/404"
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
@@ -928,36 +551,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "task_id": {
-                    "type": "integer"
-                  },
-                  "creator_id": {
-                    "type": "integer"
-                  },
-                  "contractor_id": {
-                    "type": "integer"
-                  },
-                  "rate": {
-                    "type": "integer"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
@@ -1002,7 +599,7 @@
             }
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
@@ -1030,39 +627,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "task_id": {
-                    "type": "integer"
-                  },
-                  "creator_id": {
-                    "type": "integer"
-                  },
-                  "contractor_id": {
-                    "type": "integer"
-                  },
-                  "rate": {
-                    "type": "integer"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "404": {
-            "description": "User not found!"
+            "$ref": "#/components/responses/404"
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
@@ -1090,39 +661,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "task_id": {
-                    "type": "integer"
-                  },
-                  "creator_id": {
-                    "type": "integer"
-                  },
-                  "contractor_id": {
-                    "type": "integer"
-                  },
-                  "rate": {
-                    "type": "integer"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "404": {
-            "description": "User not found!"
+            "$ref": "#/components/responses/404"
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
@@ -1150,143 +695,130 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "task_id": {
-                    "type": "integer"
-                  },
-                  "creator_id": {
-                    "type": "integer"
-                  },
-                  "contractor_id": {
-                    "type": "integer"
-                  },
-                  "rate": {
-                    "type": "integer"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "404": {
-            "description": "User not found!"
+            "$ref": "#/components/responses/404"
           },
           "500": {
-            "description": "Internal server error!"
+            "$ref": "#/components/responses/500"
           }
         }
       }
     }
   },
-  "definitions": {
-    "User": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "nickname": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        },
-        "ip": {
-          "type": "string"
-        },
-        "zip": {
-          "type": "integer"
-        },
-        "personal": {
-          "type": "string"
-        },
-        "rating": {
-          "type": "float"
-        },
-        "avatar": {
-          "type": "string"
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nickname": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          },
+          "zip": {
+            "type": "integer"
+          },
+          "personal": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "float"
+          },
+          "avatar": {
+            "type": "string"
+          }
+        }
+      },
+      "Task": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "title": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "creator_id": {
+            "type": "integer"
+          },
+          "contractor_id": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "zip": {
+            "type": "integer"
+          },
+          "deadline": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string"
+          },
+          "photos": {
+            "type": "string"
+          },
+          "requests": {
+            "type": "string"
+          }
+        }
+      },
+      "Review": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "task_id": {
+            "type": "integer"
+          },
+          "creator_id": {
+            "type": "integer"
+          },
+          "contractor_id": {
+            "type": "integer"
+          },
+          "rate": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          }
         }
       }
     },
-    "Task": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "title": {
-          "type": "string"
-        },
-        "category": {
-          "type": "string"
-        },
-        "creator_id": {
-          "type": "integer"
-        },
-        "contractor_id": {
-          "type": "integer"
-        },
-        "price": {
-          "type": "integer"
-        },
-        "description": {
-          "type": "string"
-        },
-        "zip": {
-          "type": "integer"
-        },
-        "deadline": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "status": {
-          "type": "string"
-        },
-        "photos": {
-          "type": "string"
-        },
-        "requests": {
-          "type": "string"
-        }
-      }
-    },
-    "Review": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "task_id": {
-          "type": "integer"
-        },
-        "creator_id": {
-          "type": "integer"
-        },
-        "contractor_id": {
-          "type": "integer"
-        },
-        "rate": {
-          "type": "integer"
-        },
-        "description": {
-          "type": "string"
-        }
+    "responses": {
+      "200": {
+        "description": "Successful operation!"
+      },
+      "404": {
+        "description": "Not found!"
+      },
+      "500": {
+        "description": "Internal server error!"
       }
     }
   }
