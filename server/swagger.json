@@ -1,5 +1,5 @@
 {
-  "swagger": "2.0",
+  "openapi": "3.0.0",
   "info": {
     "description": "API documentation for doit4me app",
     "version": "1.0.0",
@@ -1188,105 +1188,118 @@
       }
     }
   },
-  "definitions": {
-    "User": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "nickname": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        },
-        "ip": {
-          "type": "string"
-        },
-        "zip": {
-          "type": "integer"
-        },
-        "personal": {
-          "type": "string"
-        },
-        "rating": {
-          "type": "float"
-        },
-        "avatar": {
-          "type": "string"
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nickname": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          },
+          "zip": {
+            "type": "integer"
+          },
+          "personal": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "float"
+          },
+          "avatar": {
+            "type": "string"
+          }
+        }
+      },
+      "Task": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "title": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "creator_id": {
+            "type": "integer"
+          },
+          "contractor_id": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "zip": {
+            "type": "integer"
+          },
+          "deadline": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string"
+          },
+          "photos": {
+            "type": "string"
+          },
+          "requests": {
+            "type": "string"
+          }
+        }
+      },
+      "Review": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "task_id": {
+            "type": "integer"
+          },
+          "creator_id": {
+            "type": "integer"
+          },
+          "contractor_id": {
+            "type": "integer"
+          },
+          "rate": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          }
         }
       }
     },
-    "Task": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "title": {
-          "type": "string"
-        },
-        "category": {
-          "type": "string"
-        },
-        "creator_id": {
-          "type": "integer"
-        },
-        "contractor_id": {
-          "type": "integer"
-        },
-        "price": {
-          "type": "integer"
-        },
-        "description": {
-          "type": "string"
-        },
-        "zip": {
-          "type": "integer"
-        },
-        "deadline": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "status": {
-          "type": "string"
-        },
-        "photos": {
-          "type": "string"
-        },
-        "requests": {
-          "type": "string"
-        }
-      }
-    },
-    "Review": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "task_id": {
-          "type": "integer"
-        },
-        "creator_id": {
-          "type": "integer"
-        },
-        "contractor_id": {
-          "type": "integer"
-        },
-        "rate": {
-          "type": "integer"
-        },
-        "description": {
-          "type": "string"
-        }
+    "responses": {
+      "200": {
+        "description": "Successful action!"
+      },
+      "404": {
+          "description": "Not found!"
+      },
+      "500": {
+          "description": "Internal server error!"
       }
     }
   }
