@@ -570,33 +570,7 @@
         "produces": ["application/json"],
         "responses": {
           "200": {
-            "description": "Successful operation!",
-            "schema": {
-              "type": "array",
-              "items": {
-                "required": "email",
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "task_id": {
-                    "type": "integer"
-                  },
-                  "creator_id": {
-                    "type": "integer"
-                  },
-                  "contractor_id": {
-                    "type": "integer"
-                  },
-                  "rate": {
-                    "type": "float"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/200"
           },
           "500": {
             "$ref": "#/components/responses/500"
@@ -812,13 +786,13 @@
     },
     "responses": {
       "200": {
-        "description": "Successful operation!"
+        "description": "Successful action!"
       },
       "404": {
-        "description": "Not found!"
+          "description": "Not found!"
       },
       "500": {
-        "description": "Internal server error!"
+          "description": "Internal server error!"
       }
     }
   }
