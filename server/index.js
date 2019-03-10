@@ -2,7 +2,6 @@ const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const router = require('express').Router();
-
 const swaggerUi = require('swagger-ui-express'),
     swaggerDocument = require('./swagger.json');
 
