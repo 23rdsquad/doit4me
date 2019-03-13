@@ -23,4 +23,9 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-
+.wrapper_body {
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
