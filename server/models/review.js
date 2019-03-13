@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Review = sequelize.define('Review', {
-    job_id: {
+    task_id: {
       allowNull: false,
       type: DataTypes.INTEGER
     },
