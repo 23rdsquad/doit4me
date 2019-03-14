@@ -17,7 +17,7 @@ export default class Home extends Component {
             <div className='hero-text'>
               <div>Title</div>
               <p>This is the content</p>
-              <a class="waves-effect waves-light btn-large">Button</a>
+              <a class="waves-effect waves-light btn-large" href="/">Button</a>
             </div>
           </div>
         </div>
@@ -81,8 +81,8 @@ export default class Home extends Component {
           <h1>What are you waiting for?</h1>
           <h4>Get start today.</h4>
           <div>
-            <a class="waves-effect waves-light btn-large">Sign in</a>
-            <a class="waves-effect waves-light btn-large">Sign up</a>
+            <a class="waves-effect waves-light btn-large" href="/">Sign in</a>
+            <a class="waves-effect waves-light btn-large" href="/">Sign up</a>
           </div>
         </article>
       </main>
