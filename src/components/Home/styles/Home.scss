@@ -1,0 +1,103 @@
+.Home {
+    width: 100%;
+    color: gray;
+    section {
+        display: flex;
+        justify-content: space-around;
+        padding: 100px;
+        div {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img {
+                height: 125px;
+                width: 125px;
+            }
+        }
+    }
+}
+
+
+.hero-image {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../../assets/hero.jpg");
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 200px 50px 200px 50px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+@media (max-width: 640px) {
+    .hero-image {
+        padding: 100px 50px 100px 50px;
+    }
+
+    .Home {
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            div {
+                img {
+                    margin: 50px 50px 0px 50px;
+                    height: 100px;
+                    width: 100px;
+                }
+            }
+        }
+    }
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    > div {
+        font-size: 50px;
+    }
+}
+
+.middle {
+    box-shadow: 0 -2px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: 	#787878;
+    > div {
+        display: flex;
+        justify-content: space-around;
+        margin: 50px;
+        width: 50%;
+        > div {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            height: inherit;
+        }
+                img {
+                    height: 150px;
+                    width: 150px;
+                    border-radius: 50%;
+                }
+    }
+}
+
+
+.end {
+    margin: 10% 0 5% 15%;
+    > div {
+        margin: 10px 10px 10px 0px;
+        a {
+            margin: 10px 10px 10px 0px;
+        }
+    }
+}
