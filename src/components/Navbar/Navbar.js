@@ -7,7 +7,7 @@ export default class Navbar extends Component {
     return (
       <nav>
         <div className="nav-wrapper blue darken-1">
-          <a href="/" className="brand-logo">Logo</a>
+          <Link to='/' className="brand-logo">Logo</Link>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><Link to='/create'>Create a task</Link></li>
             <li><Link to='/signIn'>Sign in</Link></li>

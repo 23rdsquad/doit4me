@@ -79,7 +79,7 @@ export default class Home extends Component {
 
         <article className='end'>
           <h1>What are you waiting for?</h1>
-          <h4>Get start today.</h4>
+          <h4>Get started today.</h4>
           <div>
             <a class="waves-effect waves-light btn-large" href="/">Sign in</a>
             <a class="waves-effect waves-light btn-large" href="/">Sign up</a>
