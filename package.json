@@ -17,7 +17,7 @@
     "react-redux": "^6.0.1",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.5",
+    "react-scripts": "^3.0.0",
     "redux": "^4.0.1",
     "sequelize": "^4.42.0",
     "sequelize-cli": "^5.4.0",
