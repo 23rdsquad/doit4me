@@ -5,4 +5,8 @@
 	justify-content: center;
 	align-items: center;
 	align-content: center;
+	
+}
+.page-footer{
+	height: 100%;
 }

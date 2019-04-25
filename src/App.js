@@ -7,11 +7,16 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Navbar />
-        <div className='wrapper_body'>
+        <div id="nav-wrapper">
+          <Navbar />
+        </div>
+        <div id="body">
           {routes}
         </div>
-        <Footer />
+        <div id="footer">
+          <Footer />
+        </div>
+        
       </div>
     );
   }

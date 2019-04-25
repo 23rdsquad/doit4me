@@ -19,19 +19,20 @@ body {
 .App {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.2fr 2.4fr 0.4fr;
+  grid-template-rows: 3em 1auto 4.5em;
   grid-template-areas: "navbar" "body" "footer";
 }
 
-.nav-wrapper {
+#navbar {
   grid-area: navbar;
 }
 
-.wrapper_body {
+#body {
+  min-height: 86vh;
   grid-area: body;
 }
 
-.page-footer {
+#footer {
   grid-area: footer;
 }
 
