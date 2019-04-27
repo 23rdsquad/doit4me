@@ -93,7 +93,6 @@ module.exports = {
       return user
       .update({
         nickname: nickname,
-        password: password,
         email: email,
         ip: ip,
         zip: zip,
