@@ -1,2 +1,9 @@
 .brand-logo {
-  padding-left: 12px !important; }
+  padding-left: 12px !important;
+}
+
+.nav-wrapper {
+  width: 75%;
+  max-width: 1000px;
+  margin: 0px auto;
+}

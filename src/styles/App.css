@@ -20,7 +20,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 3em 1auto 4.5em;
-  grid-template-areas: "navbar" "body" "footer";
+  grid-template-areas: "navbar""body""footer";
 }
 
 #navbar {
@@ -30,6 +30,13 @@ body {
 #body {
   min-height: 86vh;
   grid-area: body;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+
 }
 
 #footer {
@@ -50,3 +57,5 @@ code {
   display: flex;
   justify-content: center;
 }
+
+

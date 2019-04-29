@@ -8,8 +8,8 @@ import NotFound from "../components/NotFound/NotFound"
 
 export default (
   <Switch>
-    <Route exact path="/" component={ Home }/>
-    <Route exact path="/about" component={ About }/>
+    <Route exact path="/" component={ About }/>
+    <Route exact path="/home" component={ Home }/>
     <Route path="/create" component={ CreateTask }/>
     <Route path="/signin" component={ SignIn }/>
     <Route path="*" component={ NotFound }/>

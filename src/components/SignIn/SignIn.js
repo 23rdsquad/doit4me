@@ -32,15 +32,16 @@ export default class SignIn extends Component {
             <div className="SignIn-card">
               <div className="card-content black-text">
                 <h3>Login</h3>
-                
-                <div className="input-field col s8">
-                  <input  type="text" id="nickname" className="validate" onChange = {this.handleChange(this)}/>
-                  <label className="active" htmlFor="nickname">Nickname</label>
-                </div>
-                <div className="input-field col s8">
-                  <input  id="password" type="password" className="validate" onChange = {this.handleChange(this)}/>
-                  <label className="active" htmlFor="password">Password</label>
-                </div>
+                <form>
+                  <div className="input-field col s8">
+                    <input  type="text" id="nickname" className="validate" onChange = {this.handleChange(this)}/>
+                    <label className="active" htmlFor="nickname">Nickname</label>
+                  </div>
+                  <div className="input-field col s8">
+                    <input  id="password" type="password" className="validate" onChange = {this.handleChange(this)}/>
+                    <label className="active" htmlFor="password">Password</label>
+                  </div>
+                </form>
                 <div>
                   <div className="center-align SignIn-buttons-box-narrow">
                     <a href="/" className="collection-item pulse">Forgot Login</a>

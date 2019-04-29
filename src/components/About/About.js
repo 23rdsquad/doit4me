@@ -15,12 +15,22 @@ export default class About extends Component {
         <div>
           <div className="hero-image">
             <div className='hero-text'>
-              <div>Title</div>
-              <p>This is the content</p>
-              <a class="waves-effect waves-light btn-large" href="/">Button</a>
+              <div className="center-align">We will let you free from your duties.</div>
+                <h4 className="center-align">Let someone else do your job.</h4>
+                <form className="col s12">
+                  <div className="input-field col s6">
+                    <input id="input" type="text" className="about-input"/>
+                    <label  className="center-align about-input" htmlFor="input">What do you need?</label>
+                  </div>
+                </form>
+                <div className="about-buttons-space-around">
+                    <button className="waves-effect green lighten-1 btn-large" >Create</button>
+                    <button className="waves-effect blue lighten-3 btn-large" >Search</button>
+                </div>
             </div>
           </div>
-        </div>
+        </div>  
+         
 
         <section>
           <div>
@@ -81,8 +91,8 @@ export default class About extends Component {
           <h1>What are you waiting for?</h1>
           <h4>Get started today.</h4>
           <div>
-            <a class="waves-effect waves-light btn-large" href="/">Sign in</a>
-            <a class="waves-effect waves-light btn-large" href="/">Sign up</a>
+            <a className="waves-effect waves-light btn-large" href="/">Sign in</a>
+            <a className="waves-effect waves-light btn-large" href="/">Sign up</a>
           </div>
         </article>
       </main>
