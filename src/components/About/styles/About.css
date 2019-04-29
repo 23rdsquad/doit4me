@@ -34,7 +34,7 @@
 }
 
 @media (max-width: 640px) {
-  
+
   .hero-image {
     background-position: right;
     padding: 100px 50px 100px 50px;
@@ -111,34 +111,40 @@
 .label-maring-top {
   margin-top: 2rem;
 }
-.border-radius-zero{
+
+.border-radius-zero {
   border-radius: 0px;
 }
-.about-buttons-space-around{
+
+.about-buttons-space-around {
   min-width: 300px;
   width: 50%;
   max-width: 475px;
   display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
 }
 
- /* label focus color */
- .about-input{
+/* label focus color */
+.about-input-label {
   color: white !important;
- }
-.about-input:focus + label {
+}
+.about-input:focus {
+  box-shadow: 0 2px 0 0 white !important;
   color: white;
 }
+
+
 /* label underline focus color */
 .about-input:focus {
   color: white !important;
   border-bottom: 1px solid white !important;
   box-shadow: 0 1px 0 0 white;
 }
-.about-input:not(.browser-default):focus:not([readonly])+label{
+
+.about-input:not(.browser-default):focus:not([readonly])+label {
   color: white !important;
 }

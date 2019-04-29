@@ -7,11 +7,77 @@ import world from '../../assets/icons/world.png'
 import notebook from '../../assets/notebook.jpg'
 import map from '../../assets/map.jpg'
 import painting from '../../assets/painting.jpg'
-
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+/*
 export default class About extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      classes: PropTypes.object.isRequired
+    };
+  }
+  
   render() {
     return (
-      <main className="About">
+      
+    );
+  }
+}
+*/
+
+const styles = theme => ({
+  button: {
+    margin: theme.spacing.unit,
+    '&:focus':{
+      "background-color": "none !important",
+    }
+  },
+  green:{
+    "font-size": "large",
+    margin: theme.spacing.unit,
+    color: "#6cea71ab",
+    '&:hover':{
+      color: "white",
+      background: "rgba(255,255,255, 0.4)",
+      "transition-timing-function": "ease" 
+    },
+    "@media only screen and (max-width: 600px)": {
+      color: "white",
+      "&:active":{
+        background: "#6cea71ab"
+      },
+      "&:focus":{
+        background: "#6cea71ab"
+      }
+    }
+  },
+  blue:{
+    "font-size": "large",
+    margin: theme.spacing.unit,
+    color: "#90caf9",
+    '&:hover':{
+      color: "white",
+      background: "rgba(255,255,255, 0.4)",
+    },
+    "@media only screen and (max-width: 600px)": {
+      color: "white",
+      "&:active":{
+        background: "#90caf9"
+      },
+      "&:focus":{
+        background: "#90caf9"
+      }
+    }
+  },
+});
+
+function Navbar(props) {
+  const { classes } = props;
+  return (
+    <main className="About">
         <div>
           <div className="hero-image">
             <div className='hero-text'>
@@ -19,14 +85,18 @@ export default class About extends Component {
                 <h4 className="center-align">Let someone else do your job.</h4>
                 <form className="col s12">
                   <div className="input-field col s6">
-                    <input id="input" type="text" className="about-input"/>
-                    <label  className="center-align about-input" htmlFor="input">What do you need?</label>
+                    <input id="about-input" type="text" className="about-input"/>
+                    <label  className="center-align about-input-label" htmlFor="about-input">What do you need?</label>
                   </div>
                 </form>
                 <div className="about-buttons-space-around">
+                    <Button size="large" className={classes.green}><Icon>create</Icon> Create</Button>
+                    <Button size="large" className={classes.blue} ><Icon>search</Icon> Search</Button>
+                    </div>
+                {/* <div className="about-buttons-space-around">
                     <button className="waves-effect green lighten-1 btn-large" >Create</button>
                     <button className="waves-effect blue lighten-3 btn-large" >Search</button>
-                </div>
+                </div> */}
             </div>
           </div>
         </div>  
@@ -96,6 +166,11 @@ export default class About extends Component {
           </div>
         </article>
       </main>
-    );
-  }
+  );
 }
+
+Navbar.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(Navbar);
