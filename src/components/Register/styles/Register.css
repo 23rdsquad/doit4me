@@ -1,10 +1,13 @@
-.SignIn-card {
-  width: auto;
+.Register-card {
+  width: min-content;
   min-width: 325px;
 
   max-width: 360px;
   margin-top: 8%;
   margin-bottom: 8%; 
+}
+.Register-card > .row{
+  width: 100%;
 }
 
 .card-row {
@@ -23,7 +26,7 @@ section {
   section > span {
     margin: 0px 5px 0px 5px; }
 
-.SignIn-buttons-box{
+.Register-buttons-box{
   display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -31,7 +34,7 @@ section {
 	align-items: center;
 	align-content: center;
 }
-.SignIn-buttons-box-narrow{
+.Register-buttons-box-narrow{
   height: 100px;
   margin: 0px auto;
   max-width: 250px;
@@ -41,4 +44,18 @@ section {
 	justify-content: space-around;
 	align-items: center;
 	align-content: center;
+}
+.Register-avatar{
+  width: 80%;
+}
+.img-wrap {
+  position: relative;
+}
+.img-wrap .close {
+  position: absolute;
+  top: 2px;
+  right: 42px;
+  z-index: 10;
+  color: orangered;
+  cursor: pointer;
 }

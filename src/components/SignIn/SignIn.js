@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import "./styles/SignIn.css"
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 export default class SignIn extends Component {
   state ={
@@ -12,7 +13,7 @@ export default class SignIn extends Component {
     console.log('ready!')
   }
   handleChange = (event) => {
-    console.log(event)
+    // console.log(event)
     // this.setState({ words: event.target.value })
   }
   login(){ // Login as admin
@@ -52,7 +53,7 @@ export default class SignIn extends Component {
               </div>
               <div className="SignIn-buttons-box">
                 <button className="btn waves-effect waves-light z-depth-3" onClick={() => { this.login() }}>Submit</button>
-                <button  className="btn waves-effect blue darken-1 z-depth-3" >Register</button>
+                <Link to="/register"><button  className="btn waves-effect blue darken-1 z-depth-3" >Register</button></Link>
               </div>
             </div>
     );

@@ -7,7 +7,7 @@ import world from '../../assets/icons/world.png'
 import notebook from '../../assets/notebook.jpg'
 import map from '../../assets/map.jpg'
 import painting from '../../assets/painting.jpg'
-
+import { Link } from "react-router-dom";
 
 export default class About extends Component {
   constructor(props) {
@@ -41,15 +41,15 @@ export default class About extends Component {
                 <div className='hero-text'>
                   <div className="center-align">We will let you free from your duties.</div>
                     <h4 className="center-align">Let someone else do your job.</h4>
-                    <form className="col s12">
+                    <form className="col s12" autoComplete="off">
                       <div className="input-field col s6">
                         <input id="about-input" type="text" className="about-input" onChange={event => this.handleChange(event)} />
                         <label  className="center-align about-input-label" htmlFor="about-input">What do you need?</label>
                       </div>
                     </form>
                     <div className="about-buttons-space-around">
-                        <button className="waves-effect green lighten-1 btn-large"  onClick={() => this.createClicked()}>Create</button>
-                        <button className="waves-effect blue lighten-3 btn-large" onClick={() => this.searchClicked()}>Search</button>
+                        <Link to="/signin"><button className="waves-effect green lighten-1 btn-large"  onClick={() => this.createClicked()}>Create</button></Link>
+                        <Link to="/home"><button className="waves-effect blue lighten-3 btn-large" onClick={() => this.searchClicked()}>Search</button></Link>
                     </div>
                 </div>
               </div>
