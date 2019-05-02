@@ -22,7 +22,7 @@ module.exports = {
       },
       ip: {
         allosNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       zip: {
         allosNull: false,
