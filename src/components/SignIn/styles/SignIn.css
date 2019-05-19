@@ -1,11 +1,7 @@
-.SignIn-card {
-  width: auto;
-  min-width: 325px;
-
-  max-width: 360px;
+.card {
+  width: 35%;
   margin-top: 8%;
-  margin-bottom: 8%; 
-}
+  margin-bottom: 8%; }
 
 .card-row {
   display: flex;
@@ -22,23 +18,3 @@ section {
   letter-spacing: .2px; }
   section > span {
     margin: 0px 5px 0px 5px; }
-
-.SignIn-buttons-box{
-  display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: center;
-}
-.SignIn-buttons-box-narrow{
-  height: 100px;
-  margin: 0px auto;
-  max-width: 250px;
-  display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: center;
-}
