@@ -9,7 +9,9 @@ export default class Register extends Component {
     "email": '',
     "password": '',
     "con_password": '',
-    "avatar": null
+    "avatar": null,
+    "ip": null,
+    "rating": 0
   }
   fileInput = React.createRef();
 
@@ -54,14 +56,12 @@ export default class Register extends Component {
     const password = this.state.password
     console.log(this.state)
     console.log(this.fileInput.current.files[0])
-    // axios.post('/register', {
-    //   nickname,
-    //   password
-    // }).then(response => {
-    //   console.log(response)
-    // }).catch(error => {
-    //   alert("Wrong email or password");
-    // })
+    axios.post('/register', this.state).then(response => {
+      console.log(response)
+    }).catch(error => {
+      console.log(error)
+      alert("Wrong email or password");
+    })
   }
   render() {
     return (

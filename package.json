@@ -12,11 +12,7 @@
     "express-session": "^1.15.6",
     "materialize-css": "^1.0.0-rc.2",
     "node-sass-chokidar": "^1.3.4",
-<<<<<<< HEAD
-    "nodemon": "^1.18.11",
-=======
     "nodemon": "^1.19.0",
->>>>>>> 29286d834f9cb0a35e5736f451ad09e4b32b7068
     "pg": "^7.8.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
